@@ -1,2 +1,2 @@
 # ceub-siscom
-UniCEUB - Sistemas de Comunicacao
+UniCEUB - Sistemas de Comunicação
