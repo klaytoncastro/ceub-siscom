@@ -2,17 +2,13 @@
 
 ## Introdução
 
-O **GNS3 (Graphical Network Simulator 3)** é uma ferramenta robusta para simular redes em um ambiente virtual. Surgiu em 2008 como uma evolução de ferramentas de simulação de redes mais simples, como o **Dynamips**, com o objetivo de oferecer uma interface gráfica amigável para a configuração de redes simuladas e o foco estava inicialmente na emulação de roteadores Cisco, utilizando o **IOS (Internetwork Operating System)**. Contudo, a ferramenta expandiu rapidamente para suportar uma ampla variedade de dispositivos e fabricantes, sendo mantido por uma comunidade ativa de desenvolvedores e entusiastas de redes ao redor do mundo, que contribuem com atualizações regulares, tutoriais, fóruns de discussão e projetos colaborativos.
+O **GNS3 (Graphical Network Simulator 3)** é uma solução robusta para simulação de ambientes de rede. Surgiu em 2008 como uma evolução de ferramentas de simulação de redes mais simples, como o **Dynamips**, e seu objetivo era oferecer uma interface gráfica amigável para a configuração de redes simuladas. O foco estava inicialmente na emulação de roteadores Cisco, utilizando o **IOS (Internetwork Operating System)**. Contudo, evoluiu rapidamente para suportar uma ampla gama de dispositivos e fabricantes, sendo mantido por uma comunidade ativa de desenvolvedores e entusiastas de redes ao redor do mundo, que contribuem com atualizações regulares, tutoriais, fóruns de discussão e projetos colaborativos.
 
-O GNS3 permite a simulação de dispositivos de rede, como **roteadores, switches, firewalls e PCs**, possibilitando a configuração e o teste de redes de forma realista, oferecendo a oportunidade única de colocar em prática os conceitos de redes de computadores aprendidos em sala de aula, sem a necessidade de hardware especializado. Além disso, utilizando ambientes baseados em contêineres, podemos simular uma ampla gama de serviços e protocolos essenciais de rede, como **Mail eXchanger (MX: SMTP, POP3, IMAP)** , **DNS (Domain Name System)**, **DHCP (Dynamic Host Configuration Protocol)**, dentre outros, viabilizando a criação de ambientes complexos e funcionais.
+O GNS3 permite a simulação de dispositivos de rede, tair como: **roteadores, switches, firewalls e PCs**, possibilitando a configuração e o teste de um ambiente de rede de forma realista, oferecendo a oportunidade praticar os conceitos relacionados às redes de computadores, sem a necessidade de atuar diretamente no hardware especializado. Além disso, utilizando ambientes baseados em contêineres, podemos simular uma ampla gama de serviços e protocolos essenciais de rede, como **Mail eXchanger (MX: SMTP, POP3, IMAP)** , **DNS (Domain Name System)**, **DHCP (Dynamic Host Configuration Protocol)**, dentre outros, viabilizando a criação de ambientes complexos e funcionais.
 
 ## Objetivo
 
-Este repositório fornece as bases para a configuração e uso do **GNS3** em simulações de rede. Utilizaremos o GNS3 para criar redes simuladas, **configurar protocolos de roteamento** e **testar topologias de rede**, compreendendo o funcionamento e as interações entre dispositivos. Além disso, exploraremos a configuração de **serviços essenciais de rede**, como **DNS** e **DHCP**, aprofundando o entendimento sobre como as redes se mantêm e se configuram automaticamente.
-
-## O que você aprenderá
-
-Com este projeto, você será capaz de:
+Este repositório fornece as bases para a configuração e uso do **GNS3** em simulações de rede. Utilizaremos o GNS3 para criar redes simuladas, **configurar protocolos de roteamento** e **testar topologias de rede**, compreendendo o funcionamento e as interações entre dispositivos. Além disso, exploraremos a configuração de **serviços essenciais de rede**, como **DNS** e **DHCP**, aprofundando o entendimento sobre como as redes se mantêm e se configuram automaticamente. Com este projeto, você será capaz de:
 
 - Simular e configurar **roteadores**, **switches** e **serviços de rede** como **SMTP**, **IMAP**, **DNS** e **DHCP** de forma virtual.
 - Compreender e aplicar protocolos de roteamento como **OSPF**, **RIP**, **EIGRP** e **BGP**.
