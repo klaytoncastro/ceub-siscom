@@ -40,7 +40,7 @@ wsl --set-default-version 2
 
 ## Passo 5: Instalação do Docker
 
-- Instale o [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/#:~:text=Docker%20Desktop%20for%20Windows%20%2D%20x86_64) para Windows e realize o logout/login.
+- Baixe e instale o [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/#:~:text=Docker%20Desktop%20for%20Windows%20%2D%20x86_64) e realize o logout/login.
 - O Docker Desktop for Windows fornece uma interface gráfica e integra o Docker ao sistema, facilitando a execução e o gerenciamento de containers diretamente no Windows.
 
 ## Passo 6: Utilização do Ambiente
