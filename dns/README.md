@@ -22,7 +22,7 @@ O **BIND (Berkeley Internet Name Domain)** é um dos servidores DNS mais utiliza
 Prepare o ambiente para rodar o projeto: 
 
 ```bash
-cd /opt
+cd /opt/ceub-siscom
 git pull https://github.com/klaytoncastro/ceub-siscom
 cd ceub-siscom
 chmod +x setup.sh
