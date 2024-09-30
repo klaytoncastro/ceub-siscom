@@ -26,6 +26,7 @@ cd /opt/ceub-siscom
 git pull https://github.com/klaytoncastro/ceub-siscom
 cd dns
 chmod +x setup.sh
+./setup.sh
 docker compose up -d --build
 ```
 
