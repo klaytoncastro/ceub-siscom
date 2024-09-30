@@ -1,0 +1,15 @@
+services:
+  dns:
+    image: ubuntu/bind9:latest
+    container_name: bind9
+    volumes:
+      - ./bind:/etc/bind
+      - ./bind/cache:/var/cache/bind
+      - ./bind/lib:/var/lib/bind
+    ports:
+      - "8053:53/tcp"
+      - "8053:53/udp"
+    restart: always
+    environment:
+      - TZ=America/Sao_Paulo
+    command: ["-f"]
