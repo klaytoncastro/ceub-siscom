@@ -24,6 +24,7 @@ Prepare o ambiente para rodar o projeto:
 ```bash
 cd /opt/ceub-siscom
 git pull https://github.com/klaytoncastro/ceub-siscom
+cd dns
 chmod +x setup.sh
 docker compose up -d --build
 ```
