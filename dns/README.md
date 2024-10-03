@@ -1,6 +1,6 @@
 # Serviço de Resolução de Nomes (DNS)
 
-## Visão Geral
+## 1. Visão Geral
 
 ### O que é DNS?
 
@@ -22,7 +22,7 @@ Sem o DNS, navegar na internet seria como tentar encontrar um endereço sem um m
 
 O **BIND (Berkeley Internet Name Domain)** é um dos servidores DNS mais utilizados no mundo. Ele permite configurar e gerenciar domínios e subdomínios, realizar resoluções de nomes para endereços IP e pode ser executado em diversos sistemas operacionais. No ambiente que estamos montando, utilizamos o **BIND9**, uma versão robusta e atualizada do BIND.
 
-## Configurando o Ambiente
+## 2. Configurando o Ambiente
 
 ### Requisitos
 
@@ -159,7 +159,7 @@ blog.exemplo.com. IN CNAME www.exemplo.com.
 #Isso significa que blog.exemplo.com é um alias para www.exemplo.com.
 ```
 
-### Testando a configuração
+## 3. Testando a configuração
 
 ```bash
 docker ps
@@ -181,7 +181,7 @@ dig @127.0.0.1 -p 8053 www.globo.com
 
 Lembre que uma consulta DNS pode ser respondida de forma **autoritativa**, ou seja, diretamente pelo servidor que tem autoridade delegada sobre a zona (no nosso caso, `exemplo.com`) ou pode ser respondida de forma **recursiva**, quando o servidor DNS aceita consultas e as encaminha, guardando a resolução de nomes em seu cache para as próximas consultas. 
 
-### Tarefa
+### 4. Tarefa
 
 Use o comando dig para verificar a resolução de www.exemplo.com e 192.168.0.2 (reverso):
 
@@ -208,6 +208,6 @@ Monitore os logs do contêiner enquanto realiza consultas DNS para entender como
 docker logs -f bind9
 ```
 
-### Conclusão
+## Conclusão
 
 Este projeto permite que você configure e teste um servidor DNS utilizando o BIND9 dentro de um contêiner Docker. Ao seguir as instruções acima, você aprendeu a gerenciar registros de domínio, adicionar subdomínios e monitorar o comportamento do servidor DNS. Este é o primeiro passo para entender como serviços de DNS funcionam, além de prepará-lo para configurar aplicativos que usarão este ambiente como base. Nossos próximos passos incluirão a configuração de aplicativos que utilizarão este mesmo ambiente DNS. Continue praticando a adição de novos registros e subdomínios para dominar o BIND9 e o sistema de resolução de nomes. 
