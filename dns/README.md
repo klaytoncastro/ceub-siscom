@@ -181,7 +181,7 @@ dig @127.0.0.1 -p 8053 www.globo.com
 
 Lembre que uma consulta DNS pode ser respondida de forma **autoritativa**, ou seja, diretamente pelo servidor que tem autoridade delegada sobre a zona (no nosso caso, `exemplo.com`) ou pode ser respondida de forma **recursiva**, quando o servidor DNS aceita consultas e as encaminha, guardando a resolução de nomes em seu cache para as próximas consultas. 
 
-### 4. Tarefa
+## 4. Tarefa
 
 Use o comando dig para verificar a resolução de www.exemplo.com e 192.168.0.2 (reverso):
 
