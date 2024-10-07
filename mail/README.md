@@ -62,9 +62,9 @@ Esta consolidação na prática visa reduzir a complexidade de gerenciamento, co
 
 Na nossa seção de prática, vamos observar como essa fusão de MUA e MDA acontece em plataformas como Gmail, mas também configuraremos nosso próprio servidor de e-mail, onde veremos separações mais tradicionais entre esses agentes.
 
-## 3. Integração com DNS: Registros MX, SPF, DKIM e DMARC
+## 3. Integração com DNS e Segurança 
 
-Para que os e-mails funcionem de maneira eficiente e segura, o DNS (Domain Name System) desempenha um papel crucial ao mapear domínios para os servidores de e-mail corretos. Isso é feito por meio de registros DNS específicos.
+Para que os e-mails funcionem de maneira eficiente e segura, o DNS (Domain Name System) desempenha um papel crucial ao mapear domínios para os servidores de e-mail corretos. Isso é feito por meio de registros DNS específicos e extensões como SPF, DKIM e DMARC.
 
 ### Registros MX (Mail Exchanger): 
 
