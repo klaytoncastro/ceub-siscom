@@ -63,16 +63,92 @@ Acesse o terminal do Router:
 
 - Configure os IPs para cada interface conectada às sub-redes:
 
-```bash
-/interface ethernet
-set [ find default-name=ether1 ] name=ether1-taguatinga
-set [ find default-name=ether2 ] name=ether2-asa_norte
-set [ find default-name=ether3 ] name=ether3-asa_sul
 
-/ip address
-add address=192.168.10.1/24 interface=ether1-taguatinga comment="Gateway Taguatinga"
-add address=192.168.20.1/24 interface=ether2-asa_norte comment="Gateway Asa Norte"
-add address=192.168.30.1/24 interface=ether3-asa_sul comment="Gateway Asa Sul"
+<!--
+
+### Configure o R1
+
+```bash
+/ip address add address=192.168.0.1/24 interface=ether7  # Rede de PCs
+/ip address add address=172.16.0.1/30 interface=ether1   # Interconexão com R2
+/routing ospf instance add name=default router-id=1.1.1.1
+/routing ospf area add name=backbone area-id=0.0.0.0 instance=default
+/routing ospf interface-template add interfaces=ether1 area=backbone
+```
+
+### Ativação da instância OSPF 
+
+```bash
+#No R1 e R2, execute:
+/routing ospf instance disable [find name=default]
+/routing ospf instance enable [find name=default]
+```
+
+### Configure o R1 como DHCP Server
+
+```bash
+# Adicionar um pool de endereços IP para o DHCP
+/ip pool add name=dhcp_pool_R1 ranges=192.168.0.100-192.168.0.200
+
+# Configurar o servidor DHCP na interface ether7
+/ip dhcp-server add interface=ether7 address-pool=dhcp_pool_R1 lease-time=1h name=dhcp_server_R1
+
+# Adicionar o gateway e as opções do DHCP
+/ip dhcp-server network add address=192.168.0.0/24 gateway=192.168.0.1
+```
+
+### Configure o OSPF no R2
+
+```bash
+/ip address add address=10.0.0.1/24 interface=ether7    # Rede de PCs
+/ip address add address=172.16.0.2/30 interface=ether1  # Interconexão com R1
+/routing ospf instance add name=default router-id=2.2.2.2
+/routing ospf area add name=backbone area-id=0.0.0.0 instance=default
+/routing ospf interface-template add interfaces=ether1 area=backbone
+```
+
+### Ativação da instância OSPF 
+
+```bash
+#No R1 e R2, execute:
+/routing ospf instance disable [find name=default]
+/routing ospf instance enable [find name=default]
+```
+
+### Configure o R2 como DHCP Server
+
+```bash
+# Adicionar um pool de endereços IP para o DHCP
+/ip pool add name=dhcp_pool_R2 ranges=10.0.0.100-10.0.0.200
+
+# Configurar o servidor DHCP na interface ether7
+/ip dhcp-server add interface=ether7 address-pool=dhcp_pool_R2 lease-time=1h name=dhcp_server_R2
+
+# Adicionar o gateway e as opções do DHCP
+/ip dhcp-server network add address=10.0.0.0/24 gateway=10.0.0.1
+```
+
+#/interface ethernet
+#set [ find default-name=ether1 ] name=ether1-taguatinga
+#set [ find default-name=ether2 ] name=ether2-asa_norte
+#set [ find default-name=ether3 ] name=ether3-asa_sul
+#/ip address
+#add address=192.168.10.1/24 interface=ether1 
+#add address=192.168.20.1/24 interface=ether2 
+#add address=192.168.30.1/24 interface=ether3 
+
+-->
+
+
+```bash
+# Rede de Taguatinga
+/ip address add address=192.168.10.1/24 interface=ether1 comment="GW Taguatinga" 
+
+# Rede da Asa Norte
+/ip address add address=192.168.20.1/24 interface=ether2 comment="GW Asa Norte"  
+
+# Rede da Asa Sul
+/ip address add address=192.168.30.1/24 interface=ether3 comment="GW Asa Sul"    
 ```
 
 Agora conecte os VPCS ao switch correspondente de cada local:
