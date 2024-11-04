@@ -63,7 +63,6 @@ Acesse o terminal do Router:
 
 - Configure os IPs para cada interface conectada às sub-redes:
 
-
 <!--
 
 ### Configure o R1
