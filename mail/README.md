@@ -156,25 +156,25 @@ Siga estas etapas para instalar o Mailcow:
 Clone o repositório Mailcow Dockerized:
 
 bash
-Copiar código
+
 git clone https://github.com/mailcow/mailcow-dockerized
 cd mailcow-dockerized
 Gere o arquivo de configuração com o script generate_config.sh:
 
 bash
-Copiar código
+
 ./generate_config.sh
 Durante a execução do script, você será solicitado a fornecer o domínio principal e outras informações essenciais. Certifique-se de utilizar o domínio que configurou no servidor DNS para o servidor de e-mail (por exemplo, mail.exemplo.com).
 
 Suba os serviços usando Docker Compose:
 
 bash
-Copiar código
+
 docker-compose up -d
 Acesse a interface de administração via navegador, usando o domínio ou IP configurado:
 
 bash
-Copiar código
+
 https://<seu-dominio>:8443
 Use as credenciais fornecidas no terminal para fazer login.
 
@@ -186,7 +186,7 @@ Registro A: Aponta o subdomínio mail.exemplo.com para o endereço IP do servido
 Exemplo de configuração DNS:
 
 bash
-Copiar código
+
 @       IN      MX      10 mail.exemplo.com.
 mail    IN      A       192.168.0.4
 Testando a Configuração
@@ -195,12 +195,12 @@ Utilize ferramentas como telnet ou openssl para testar a conectividade nos proto
 Exemplo de teste com telnet para SMTP:
 
 bash
-Copiar código
+
 telnet mail.exemplo.com 25
 Ou com openssl para testar conexão segura via IMAPS:
 
 bash
-Copiar código
+
 openssl s_client -connect mail.exemplo.com:993
 4. Testando o Acesso ao E-mail
 Após configurar e iniciar o Mailcow, você pode testar o envio e o recebimento de e-mails utilizando qualquer cliente de e-mail (ex: Thunderbird, Outlook) ou diretamente pela interface web do Mailcow.
@@ -224,7 +224,7 @@ O generate_config.sh gera automaticamente o arquivo de configuração principal 
 Aqui está um exemplo de como preencher o generate_config.sh:
 
 bash
-Copiar código
+
 #!/bin/bash
 
 # Definir o domínio principal do Mailcow
@@ -265,7 +265,7 @@ Registro MX: Você já tem um registro MX configurado no seu DNS apontando para 
 Com o arquivo de configuração gerado pelo generate_config.sh, rode o script e configure o Mailcow. Agora, suba os serviços com docker-compose.
 
 bash
-Copiar código
+
 # Gerar a configuração
 ./generate_config.sh
 
@@ -275,7 +275,7 @@ docker-compose up -d
 Certifique-se de que os registros DNS estejam configurados corretamente no seu servidor BIND, especialmente o registro MX. O arquivo db.exemplo.com no BIND pode conter algo como:
 
 bash
-Copiar código
+
 @       IN      MX      10 mail.exemplo.com.
 mail    IN      A       192.168.0.4
 5. Testar a Configuração
@@ -283,7 +283,7 @@ Agora que tudo está configurado, você pode testar a resolução DNS e o envio 
 
 Verifique a resolução DNS: Teste se o subdomínio mail.exemplo.com resolve corretamente.
 bash
-Copiar código
+
 dig @127.0.0.1 -p 8053 mail.exemplo.com
 Verifique o servidor de e-mail: Teste o envio e recebimento de e-mails via Mailcow para garantir que a integração com DNS está funcionando.
 Conclusão
@@ -376,25 +376,25 @@ Siga estas etapas para instalar o Mailcow:
 Clone o repositório Mailcow Dockerized:
 
 bash
-Copiar código
+
 git clone https://github.com/mailcow/mailcow-dockerized
 cd mailcow-dockerized
 Gere o arquivo de configuração com o script generate_config.sh:
 
 bash
-Copiar código
+
 ./generate_config.sh
 Durante a execução do script, você será solicitado a fornecer o domínio principal e outras informações essenciais. Certifique-se de utilizar o domínio que configurou no servidor DNS para o servidor de e-mail (por exemplo, mail.exemplo.com).
 
 Suba os serviços usando Docker Compose:
 
 bash
-Copiar código
+
 docker-compose up -d
 Acesse a interface de administração via navegador, usando o domínio ou IP configurado:
 
 bash
-Copiar código
+
 https://<seu-dominio>:8443
 Use as credenciais fornecidas no terminal para fazer login.
 
@@ -406,7 +406,7 @@ Registro A: Aponta o subdomínio mail.exemplo.com para o endereço IP do servido
 Exemplo de configuração DNS:
 
 bash
-Copiar código
+
 @       IN      MX      10 mail.exemplo.com.
 mail    IN      A       192.168.0.4
 Testando a Configuração
@@ -415,12 +415,12 @@ Utilize ferramentas como telnet ou openssl para testar a conectividade nos proto
 Exemplo de teste com telnet para SMTP:
 
 bash
-Copiar código
+
 telnet mail.exemplo.com 25
 Ou com openssl para testar conexão segura via IMAPS:
 
 bash
-Copiar código
+
 openssl s_client -connect mail.exemplo.com:993
 4. Testando o Acesso ao E-mail
 Após configurar e iniciar o Mailcow, você pode testar o envio e o recebimento de e-mails utilizando qualquer cliente de e-mail (ex: Thunderbird, Outlook) ou diretamente pela interface web do Mailcow.
