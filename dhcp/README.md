@@ -13,7 +13,7 @@ O **DHCP** (Dynamic Host Configuration Protocol) é um protocolo que permite a c
 
 ## Importância do DHCP
 
-- **Automação e Eficiência**: DHCP simplifica o ingresso e remoção de dispositivos na rede, automatizando a configuração e viabilizando a obtenção automática de IP e outras configurações necessárias, reduzindo o tempo e o trabalho administrativo.
+- **Automação e Eficiência**: DHCP simplifica o ingresso e remoção de dispositivos na rede, automatizando a configuração e viabilizando a obtenção automática de IP e outros recursos necessários, tais como as Options para dispositivos VoIP, por exemplo, reduzindo o tempo e o trabalho administrativo.
 - **Redução de Erros**: Automatizar a atribuição de endereços IP minimiza o risco de erros de configuração, como endereços IP duplicados ou configurações incorretas, que podem causar problemas de conectividade.
 - **Escalabilidade**: O DHCP é essencial para redes de médio e grande porte, onde configurar manualmente cada dispositivo seria impraticável.
 - **Facilidade de Gerenciamento**: Com o DHCP, os administradores de rede podem controlar a faixa de IPs e outras configurações de rede de forma centralizada e flexível.
