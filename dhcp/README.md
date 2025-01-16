@@ -2,9 +2,9 @@
 
 ## Visão Geral
 
-O **DHCP** (Dynamic Host Configuration Protocol) é um protocolo de rede que permite a configuração automática de dispositivos em uma rede IP. Ele atribui dinamicamente endereços IP e outras configurações essenciais, como máscara de sub-rede, gateway padrão e servidores DNS, para dispositivos que se conectam a uma rede. Esse processo automatiza a configuração da rede, reduzindo a necessidade de intervenção manual.
+O **DHCP** (Dynamic Host Configuration Protocol) é um protocolo que permite a configuração automática de dispositivos em uma rede IP. Ele atribui dinamicamente endereços IP e outras configurações essenciais, como máscara de sub-rede, gateway padrão e servidores DNS, para os dispositivos da rede. Esse processo automatiza a configuração, reduzindo a necessidade de intervenção manual.
 
-## Como Funciona
+## Como Funciona o processo: DORA
 
 1. **Discover**: O dispositivo envia uma solicitação DHCP para descobrir servidores disponíveis na rede.
 2. **Offer**: O servidor DHCP responde oferecendo um endereço IP e configurações de rede.
@@ -13,7 +13,7 @@ O **DHCP** (Dynamic Host Configuration Protocol) é um protocolo de rede que per
 
 ## Importância do DHCP
 
-- **Automação e Eficiência**: DHCP simplifica o processo de configuração de redes, permitindo que dispositivos obtenham automaticamente um IP e outras configurações necessárias, reduzindo o tempo e o trabalho administrativo.
+- **Automação e Eficiência**: DHCP simplifica o ingresso e remoção de dispositivos na rede, automatizando a configuração e viabilizando a obtenção automática de IP e outras configurações necessárias, reduzindo o tempo e o trabalho administrativo.
 - **Redução de Erros**: Automatizar a atribuição de endereços IP minimiza o risco de erros de configuração, como endereços IP duplicados ou configurações incorretas, que podem causar problemas de conectividade.
 - **Escalabilidade**: O DHCP é essencial para redes de médio e grande porte, onde configurar manualmente cada dispositivo seria impraticável.
 - **Facilidade de Gerenciamento**: Com o DHCP, os administradores de rede podem controlar a faixa de IPs e outras configurações de rede de forma centralizada e flexível.
