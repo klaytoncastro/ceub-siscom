@@ -51,7 +51,37 @@
 - `tcp.stream eq 0` → seguir conversa completa.
 
 ---
-
 # 8. Ferramentas
 
 [Baixe Aqui o Wireshark](https://drive.google.com/drive/folders/1d7FwTLtnRSnjJ5k-YRZlORNlY3c1ygQZ?usp=sharing)
+
+# 9. Laboratório
+
+```bash
+cd /opt/ceub-siscom/sniffing
+docker compose up -d --build
+
+docker exec -it client ping -c 2 web
+docker exec -it client curl -I http://web
+
+# Terminal A
+docker exec -it client tcpdump -i eth0 -w /pcaps/http_client_web.pcap
+
+# Terminal B
+docker exec -it client curl http://web
+
+
+
+```
+
+<!--wireshark ./pcaps/http_client_web.pcap
+docker network inspect $(docker compose ps -q web | xargs docker inspect --format '{{range .NetworkSettings.Networks}}{{.NetworkID}}{{end}}') \
+  | grep -o '"Name": "br-[^"]*' | head -1
+# pegue o nome br-XXXX
+
+sudo tcpdump -i br-XXXX -w ./pcaps/bridge.pcap
+
+Filtro Wireshark: tcp.stream eq 0 para seguir a primeira conexão; http para ver HTTP; tcp.flags.syn==1 && tcp.flags.ack==0 para SYN.
+
+Retransmissões desligando o web e refazendo curl para ver RST/timeouts.
+-->
