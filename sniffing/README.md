@@ -12,14 +12,41 @@ Nesse contexto, ferramentas como o Wireshark atuam como um “microscópio de re
 
 ---
 
-## 2. TCP Handshake 
+## 2. Visão Geral do Wireshark
+
+O Wireshark é um analisador de pacotes de rede gratuito e de código aberto, amplamente utilizado em ambientes acadêmicos e profissionais. Ele permite capturar, inspecionar e interpretar o tráfego de rede em tempo real, oferecendo uma visão detalhada sobre os protocolos que compõem a comunicação digital. Por sua granularidade, tornou-se uma ferramenta indispensável para administradores de redes, engenheiros de segurança, desenvolvedores e pesquisadores.
+
+### Para que serve o Wireshark?
+
+O Wireshark pode ser aplicado em diversos cenários:
+
+- Análise de Tráfego de Rede: captura pacotes em tempo real, exibindo cabeçalhos e dados, o que permite compreender fluxos de comunicação em diferentes camadas do modelo OSI/TCP-IP.
+- Diagnóstico de Problemas: auxilia na identificação de latência, retransmissões, perdas de pacotes e falhas de configuração.
+- Segurança de Rede: possibilita detectar tráfego anômalo, tentativas de intrusão, ataques e comportamentos suspeitos que podem indicar comprometimento.
+- Desenvolvimento e Teste de Protocolos: facilita a depuração e validação de implementações de protocolos de rede em sistemas distribuídos.
+- Educação e Pesquisa: fornece exemplos práticos de funcionamento de protocolos, tornando visível o que normalmente é abstrato em sala de aula.
+
+### O que é possível fazer com o Wireshark?
+Com o Wireshark é possível capturar e analisar pacotes em nível de detalhe. Entre as informações mais relevantes, destacam-se:
+
+- Endereços IP de origem e destino.
+- Portas de origem e destino utilizadas na comunicação.
+- Protocolos envolvidos em cada camada da pilha TCP/IP.
+- Tamanho dos pacotes e sequência temporal da transmissão.
+- Checksums, flags e campos de controle de cada protocolo.
+
+Esses dados permitem correlacionar teoria e prática, desde a confiabilidade oferecida pelo TCP até o funcionamento de protocolos de aplicação como HTTP.
+
+**Nota**: a captura de pacotes requer privilégios administrativos e deve ser usada de forma ética e legal. Em ambientes corporativos, é comum que esse tipo de análise só seja permitido mediante autorização expressa.
+
+### Análise do Processo de TCP Handshaking
 - 3 pacotes iniciais: **SYN → SYN/ACK → ACK**.
 - Estabelece sessão confiável.
 - Relacionar com **Camada 4 (Transporte)** do OSI.
 
 ---
 
-## 3. Requisição e Resposta HTTP
+### Análise de Requisição e Resposta HTTP Request/Reply
 - Cliente: **GET / HTTP/1.1**.
 - Servidor: **HTTP/1.1 200 OK** + HTML.
 - Exemplo de **Camada 7 (Aplicação)**.
