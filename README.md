@@ -94,6 +94,65 @@ wsl --setdefault Ubuntu-24.04
 | `ping`  | Testa a conectividade com um host                       | `ping google.com`                      |
 | `wget`  | Baixa conteúdo da web                                   | `wget http://exemplo.com/arquivo.zip`  |
 
+## Configuração Alternativa de Infraestrutura
+
+
+No caso dos usuários de Windows, que preferem evitar VMs devido a limitações de recursos, especialmente quando o dispositivo possui menos de 6GB de RAM, a infraestrutura depende Windows Subsystem for Linux (WSL) que apresentamos cima, e acaba sendo a alternativa mais interessante. No entanto, é importante lembrar que o WSL, embora eficiente, não oferece todas as vantagens de um sistema Linux completo e apresenta algumas nuances entre suas versões (WSL e WSL 2). Se você quiser se especializar no desenvolvimento de aplicações e infraestrutura pronta para execução em datacenters, também pode optar por instalar um sistema baseado em Linux em seu equipamento. No entanto, visando uma experiência mais uniforme, disponibilizamos como alternativa, uma máquina virtual (VM) pré-configurada. Embora o Docker possa ser executado diretamente em diversos sistemas operacionais, essa padronização por vezes é necessária para viabilizar o processo de suporte, visando oferecer soluções mais ágeis e consistentes diante de eventuais desafios técnicos.  
+
+<!-->No entanto, valorizamos a autonomia de cada estudante, especialmente quando se trata da prática em seus computadores pessoais. Se você já está familiarizado com o Docker e deseja executá-lo nativamente em seu sistema operacional, este repositório está preparado para essa alternativa. Além disso, para os usuários de hardware recente da Apple, como o M2, essa opção é particularmente relevante, devido a possíveis incompatibilidades com versões do VirtualBox originalmente desenvolvidas para ambientes x86_64. 
+
+essa abordagem assegura que todos iniciem o curso com o mesmo ambiente e configurações.
+-->
+
+### 3.1. Sobre o Oracle Virtual Box e a imagem OVA
+
+Caso opte pela VM alternativa, utilizaremos o Oracle VirtualBox, um software de virtualização de código aberto que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
+
+Para tal, utilizaremo uma imagem OVA (Open Virtual Appliance), um formato de arquivo para máquinas virtuais, contendo toda a configuração e discos virtuais necessários. Ele simplifica a portabilidade e implantação de ambientes virtualizados, permitindo importações fáceis em plataformas como o VirtualBox. Utilizando um arquivo OVA, é possível distribuir ambientes pré-configurados, assegurando que os usuários tenham um ambiente consistente, independentemente da localização de execução. 
+
+A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-compose`, `git` e `ssh`, otimizando a configuração dos ambientes de laboratório.
+
+### Como Usar:
+1. Baixe a imagem OVA através deste [link](https://1drv.ms/f/s!As9_hcVH7a82gpovWfhahtGkRSmriA?e=vFJ2u3).
+2. Caso não esteja instalado, baixe o VirtualBox através deste [link](https://www.oracle.com/br/virtualization/technologies/vm/downloads/virtualbox-downloads.html). 
+3. Escolha a versão correspondente ao seu sistema operacional e siga as instruções de instalação.
+4. Execute o VirtualBox e clique em **Arquivo** > **Importar Appliance**.
+5. Selecione o arquivo OVA baixado e siga as instruções na tela.
+6. Após a importação, dimensione os recursos de memória compatíveis com o laboratório ou computador pessoal. A imagem vem pré-configurada com 512MB de RAM, o que é inicialmente suficiente para prosseguir com nossos laboratórios. 
+7. Em configurações da VM, pode ser necessário alterar a porta USB para suporte à versão 1.1 ao invés da 2.0.
+8. Configure a placa de rede em modo [NAT](https://www.simplified.guide/virtualbox/port-forwarding#:~:text=Right%20click%20on%20the%20virtual%20machine%20and%20click,of%20the%20window.%20Click%20on%20Port%20Forwarding%20button).
+9. Inicie a máquina virtual (VM). 
+
+### Credenciais para acesso à VM:
+
+- **Usuário:** labihc
+- **Senha:** L@b1hc
+
+### 3.2. Compreendendo o modo NAT
+
+NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo endereço IP (_Internet Protocol_) do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
+
+Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também permite o redirecionamento de portas. Isso significa que você pode encaminhar o tráfego de uma porta específica no _host_ para uma porta na VM. Isso é bastante útil quando você deseja acessar serviços hospedados na VM, que poderão ser alcançados diretamente do _host_ ou a partir de outras máquinas na mesma rede, a exemplo das aplicações web e interfaces de gerenciamento com as quais iremos trabalhar no laboratório. 
+
+### Como configurar o Redirecionamento de Portas:
+
+1. **Abra o VirtualBox** e selecione a máquina virtual que você deseja configurar.
+2. Clique em **Configurações** (ou _Settings_).
+3. Na janela de configurações, vá para **Rede**.
+4. Sob a aba **Adaptador 1** e certifique-se de que está configurado para **Conectado a: NAT**.
+5. Clique em **Avançado** para expandir as opções.
+6. Clique em **Redirecionamento de Portas**.
+7. Na janela de redirecionamento de portas, você pode adicionar algumas regras para encaminhar portas da sua máquina host para a sua máquina virtual.
+
+### Exemplo de Tabela de Configuração de Portas:
+
+|    Nome da Regra     | Protocolo | Endereço IP do Host | Porta do Host | Endereço IP da VM | Porta da VM |
+|----------------------|-----------|---------------------|---------------|-------------------|-------------|
+| Acesso SSH           |    TCP    |      127.0.0.1      |      2222     |     10.0.2.15     |      22     |
+| Acesso GNS3          |    TCP    |      127.0.0.1      |      3080     |     10.0.2.15     |    3080     |
+
+- **Nota**: Ao configurar o redirecionamento de portas, evite utilizar as portas 0-1023 (exceto 80 e 443, para aplicações web), pois elas são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Sempre certifique-se de que a porta escolhida **não esteja em uso**. Ferramentas nativas do sistema operacional, como `netstat`, podem ajudar na verificação. 
+
 
 ## Conclusão
 
