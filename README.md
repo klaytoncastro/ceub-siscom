@@ -140,6 +140,14 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 - **Nota**: Ao configurar o redirecionamento de portas, evite utilizar as portas 0-1023 (exceto 80 e 443, para aplicações web), pois elas são reservadas. A porta 2222 é comumente usada para SSH devido à sua semelhança com a porta padrão 22 e por estar acima da faixa de portas reservadas, reduzindo a possibilidade de conflitos. Sempre certifique-se de que a porta escolhida **não esteja em uso**. Ferramentas nativas do sistema operacional, como `netstat`, podem ajudar na verificação.
 
+### Dicas: Edição de Arquivos
+
+- O `vim` é uma ferramenta baseada em terminal para editar arquivos em sistemas operacionais como Linux e MacOS, que possui inúmeros comandos e atalhos para otimizar sua produtividade. Se não estiver acostumado a administrar sistemas baseados em terminal e perceber que algo deu errado na edição, lembre-se que pode sair do Vim pressionando `Esc` e digitando `:q!` para retornar à CLI (*Command-Line Interface*) sem salvar as mudanças. À medida que se familiariza, você descobrirá o potencial da ferramenta e sentirá mais segurança na sua operação.
+
+- O SSH (_Secure Shell_), que se traduz como "cápsula segura", é um protocolo que viabiliza uma comunicação segura (criptografada) entre um computador cliente e um servidor remoto. Para gerenciar nossa VM instanciada no VirtualBox (ambiente servidor), é altamente recomendado o uso de conexões SSH ao invés da console física.
+
+- Você também pode usar o [Visual Studio Code (VS Code)](https://code.visualstudio.com/) com a extensão [SSH Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) é uma opção popular e confiável, que permite estabelecer uma sessão [SSH](https://code.visualstudio.com/docs/remote/ssh) diretamente, tornando a edição de arquivos mais intuitiva e unificando sua experiência de administração, seja no ambiente operando com VM ou com WSL. 
+
 ## 4. Comandos Básicos
 
 Para quem está em sua primeira experiência com terminal Linux, segue um glossário com os comandos básicos:
