@@ -150,27 +150,41 @@ Além de fornecer acesso à Internet, o recurso de NAT do VirtualBox também per
 
 ## 4. Comandos Básicos
 
-Para quem está em sua primeira experiência com terminal Linux, segue um glossário com os comandos básicos:
+A interface em linha de comando (CLI – Command-Line Interface) permite executar instruções diretamente no sistema, invocando ferramentas com opções e argumentos.
+Para quem está em sua primeira experiência com terminal Linux, o glossário abaixo apresenta comandos essenciais e alguns adicionais recomendados. 
 
-| Comando | Descrição                                               | Exemplo                                                |
-|---------|---------------------------------------------------------|--------------------------------------------------------|
-| `whoami`| Exibe o nome do usuário atual                           | `whoami`                                               |
-| `pwd`   | Mostra o diretório atual                                | `pwd`                                                  |
-| `history`| Exibe o histórico de comandos                          | `history`                                              |
-| `cd`    | Navega entre diretórios                                 | `cd /home` (acessa um caminho); cd .. (volta um nível) |
-| `ls`    | Lista arquivos e diretórios                             | `ls -la`                                               |
-| `mkdir` | Cria um novo diretório                                  | `mkdir nova_pasta`                                     |
-| `cp`    | Copia arquivos ou diretórios                            | `cp arquivo.txt /caminho/destino/`                     |
-| `mv`    | Move ou renomeia arquivos e diretórios                  | `mv arquivo.txt /caminho/destino/`                     |
-| `rm`    | Remove arquivos ou diretórios                           | `rm arquivo.txt`                                       |
-| `cat`   | Exibe o conteúdo de um arquivo                          | `cat arquivo.txt`                                      |
-| `grep`  | Pesquisa por padrões em arquivos                        | `grep "termo" arquivo.txt`                             |
-| `vim`   | Editor de texto no terminal                             | `vim arquivo.txt`                                      |
-| `chmod` | Altera permissões de arquivos                           | `chmod 755 arquivo.txt`                                |
-| `chown` | Modifica o proprietário de um arquivo ou diretório      | `chown usuario:grupo arquivo.txt`                      |
-| `ps`    | Lista processos em execução                             | `ps aux`                                               |
-| `ping`  | Testa a conectividade com um host                       | `ping google.com`                                      |
-| `wget`  | Baixa conteúdo da web                                   | `wget http://exemplo.com/arquivo.zip`                  |
+| **Comando**  | **Descrição**                                                             | **Exemplo**                                               |
+|--------------|---------------------------------------------------------------------------|-----------------------------------------------------------|
+| `whoami`     | Exibe o nome do usuário atual                                             | `whoami`                                                  |
+| `pwd`        | Mostra o caminho completo do diretório atual                              | `pwd`                                                     |
+| `history`    | Lista o histórico de comandos executados                                  | `history`                                                 |
+| `cd`         | Navega entre diretórios                                                   | `cd /home` (acessa um caminho) ; `cd ..` (volta um nível) |
+| `ls`         | Lista arquivos e diretórios (use `-la` para ver detalhes e ocultos)       | `ls -la`                                                  |
+| `mkdir`      | Cria um novo diretório                                                    | `mkdir nova_pasta`                                        |
+| `cp`         | Copia arquivos ou diretórios                                              | `cp arquivo.txt /caminho/destino/`                        |
+| `mv`         | Move ou renomeia arquivos e diretórios                                    | `mv arquivo.txt /caminho/destino/`                        |
+| `rm`         | Remove arquivos ou diretórios (**atenção: exclusão definitiva**)          | `rm arquivo.txt`                                          |
+| `cat`        | Exibe o conteúdo de um arquivo                                            | `cat arquivo.txt`                                         |
+| `grep`       | Pesquisa padrões em arquivos                                              | `grep "termo" arquivo.txt`                                |
+| `vim`        | Editor de texto no terminal                                               | `vim arquivo.txt`                                         |
+| `chmod`      | Altera permissões de arquivos (ex.: leitura/escrita/execução)             | `chmod 755 arquivo.txt`                                   |
+| `chown`      | Modifica o proprietário e grupo de um arquivo ou diretório                | `chown usuario:grupo arquivo.txt`                         |
+| `ps`         | Lista processos em execução                                               | `ps aux`                                                  |
+| `ping`       | Testa a conectividade com um host                                         | `ping google.com`                                         |
+| `wget`       | Baixa conteúdo da web                                                     | `wget http://exemplo.com/arquivo.zip`                     |
+| `curl`       | Faz requisições HTTP/HTTPS (ótimo para testar códigos 1xx, 3xx, 4xx, 5xx) | `curl -i http://httpbin.org/status/301`                   |
+| `top`        | Monitora em tempo real CPU, memória e processos                           | `top`                                                     |
+| `df -h`      | Mostra uso de espaço em disco em formato legível                          | `df -h`                                                   |
+| `du -sh`     | Exibe tamanho total de uma pasta                                          | `du -sh /var/log`                                         |
+| `tail -f`    | Acompanha em tempo real o final de um arquivo (ex.: logs)                 | `tail -f /var/log/syslog`                                 |
+| `ss -tulpn`  | Lista conexões de rede e portas em uso (substitui `netstat`)              | `ss -tulpn`                                               |
+| `ip a`       | Mostra interfaces e endereços de rede                                     | `ip a`                                                    |
+| `traceroute` | Rastreia o caminho até um host na rede                                    | `traceroute google.com`                                   |
+| `uptime`     | Exibe tempo de funcionamento e carga do sistema                           | `uptime`                                                  |
+
+<!--
+| `htop`       | Versão interativa do `top` (se instalada)                                 | `htop`                                                    |
+-->
 
 **Orientações de uso**: 
 
