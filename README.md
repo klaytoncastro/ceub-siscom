@@ -9,7 +9,7 @@ Também serão discutidos os principais conceitos que definem as redes de comuni
 A parte prática inclui laboratórios com simuladores de mercado, que oferecem experiência de modelagem e administração por meio da emulação de equipamentos reais em suas topologias típicas, capacitando os estudantes a trabalhar com os conceitos, terminologias e implementação da pilha de hardware e software necessária para prover os recursos mais utilizados em redes modernas, estabelecendo uma infraestrutura de comunicação confiável e segura.
 
 Para realizar a preparação do ambiente no laboratório do **CEUB**, vá para a **[Seção 3](#3-configuração-alternativa-de-infraestrutura)**.
-Para realizar a preparação do ambiente para prática **em casa**, prossiga apenas para a **[Seção 2](#2-preprando-se-para-as-práticas-em-laboratório)**.
+Para realizar a preparação do ambiente para prática **em casa**, prossiga apenas para a **[Seção 2](#2-preparando-se-para-as-práticas-em-laboratório)**.
 
 ## 2. Preparando-se para as Práticas em Laboratório
 
