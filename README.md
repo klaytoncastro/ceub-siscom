@@ -11,7 +11,7 @@ A parte prática inclui laboratórios com simuladores de mercado, que oferecem e
 Para realizar a preparação do ambiente no laboratório do **CEUB**, vá para a **[Seção 3](#3-configuração-alternativa-de-infraestrutura)**.
 Para realizar a preparação do ambiente para prática **em casa**, prossiga apenas para a **[Seção 2](#2-preprando-se-para-as-práticas-em-laboratório)**.
 
-## 2. Preprando-se para as Práticas em Laboratório
+## 2. Preparando-se para as Práticas em Laboratório
 
 O Docker é uma plataforma de virtualização leve que permite empacotar aplicações e todas as suas dependências (bibliotecas, configurações e código) em ambientes isolados, chamados containers. Esses containers são altamente portáveis e podem ser executados em qualquer sistema operacional compatível. Essa solução é amplamente adotada no mercado para criar ambientes replicáveis e consistentes, eliminando a necessidade de configurar e instalar manualmente cada aplicação em diferentes máquinas.
 
