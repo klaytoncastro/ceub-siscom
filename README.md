@@ -91,7 +91,7 @@ No entanto, visando uma experiência mais uniforme, disponibilizamos como altern
 essa abordagem assegura que todos iniciem o curso com o mesmo ambiente e configurações.
 -->
 
-### Sobre o Oracle Virtual Box e a imagem OVA
+### 3.1. Sobre o Oracle Virtual Box e a imagem OVA
 
 Caso opte pela VM alternativa, utilizaremos o Oracle VirtualBox, um software de virtualização de código aberto que permite executar vários sistemas operacionais em uma única máquina física. Com ele, é possível criar e gerenciar máquinas virtuais, cada uma com seu sistema operacional, aplicativos e arquivos em um ambiente isolado. Ele é compatível com diversos sistemas, como Windows, Linux e MacOS.
 
