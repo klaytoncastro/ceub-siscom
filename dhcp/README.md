@@ -41,6 +41,27 @@ O roteador central fará o roteamento entre essas sub-redes, conectando as difer
 - Sub-rede `192.168.30.0/24`
 - IPs na faixa de `192.168.30.1` a `192.168.30.254`.
 
+### Adicionando o roteador à sua biblioteca de dispositivos no GNS3
+
+- Acesse o GNS3 em seu navegador em `http://localhost:3080`. 
+
+- Para instalar o roteador no GNS3, crie um novo projeto e clique em `New Template`. Em `Install appliance from server`, procure por **Mikrotik CHR** e clique em `Install`.
+
+- Verifique qual versão está disponível no simulador (ex.: `7.11.2` ou `7.14.3`). Dependendo da versão disponível, você precisará fornecer a imagem virtual correta do equipamento, que pode ser baixada neste [link](https://drive.google.com/drive/folders/1d7FwTLtnRSnjJ5k-YRZlORNlY3c1ygQZ?usp=sharing). Escolha o arquivo correspondente à versão desejada: `chr-7.11.2.img.zip` ou `chr-7.14.3.img.zip`. Alternativamente vc pode rodar o comando `docker compose pull` a partir da raiz do repositório (ex: `/opt/ceub-teleco`) e atualizar sua imagem do ambiente, podendo usar a versão mais atualizada do router. 
+
+- Após baixar, descompacte o arquivo na pasta desejada usando a Interface Gráfica do seu Sistema Operacional (Windows, macOS, Linux) ou via Linha de Comando, por exemplo:
+  
+  ```bash
+  unzip chr-7.11.2.img.zip
+  ```
+
+- Para efetuar seu primeiro acesso, ligue o Router no botão `play` do GNS3. Você será convidado a inserir usuário e senha (`admin` com senha em branco, conforme indicado abaixo). Depois recuse a leitura do regulamento com `n`, defina e confirme uma nova senha, que deverá ser utilizada nos próximos acessos. 
+
+- **Usuário**: admin
+- **Senha**: 
+
+- Pronto, agora a biblioteca do simulador GNS3 conta com um equipamento virtual configurável, com suporte a protocolos como RIP, OSPF, BGP e capacidade para simular topologias com redes Ethernet e MPLS, tanto intra-AS quanto inter-AS.
+
 Para configurar o DHCP nesse mesmo cenário, você pode ajustar o roteador MikroTik CHR para fornecer endereços IP automaticamente para cada sub-rede. 
 
 ### Configuração do DHCP Server para cada Sub-rede
