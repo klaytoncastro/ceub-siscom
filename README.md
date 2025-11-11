@@ -11,6 +11,43 @@ A parte prática inclui laboratórios com simuladores de mercado, que oferecem e
 Para realizar a preparação do ambiente no laboratório do **CEUB**, vá para a **[Seção 3](#3-configuração-alternativa-de-infraestrutura)**.
 Para realizar a preparação do ambiente para prática **em casa**, prossiga apenas para a **[Seção 2](#2-preparando-se-para-as-práticas-em-laboratório)**.
 
+### Cronograma de Atividades Práticas
+
+Este cronograma define as entregas práticas correspondentes às pastas do repositório, com uma atividade por laboratório.  
+A sequência foi organizada para evoluir de fundamentos de infraestrutura até serviços de aplicação.
+
+---
+
+|  #               | Desafio                                                                  | Prazo       |
+| [01](./)         | Preparar ambiente virtual, importar OVA, configurar NAT e acesso SSH.    | 11/11/2025  |
+| [02](./sniffing/)| Capturar e analisar tráfego com Wireshark/tcpdump.                       | 11/11/2025  |
+| [03](./gns3/)    | Construir topologia e validar conectividade entre nós.                   | 11/11/2025  |
+| [04](./dhcp/)    | Configurar servidor DHCP e validar concessão de IP automática.           | 11/11/2025  |
+
+<!--
+
+
+| [03 – Routing](./routing/)                     | Implementar roteamento estático e dinâmico; validar com `traceroute`.   | 29/08/2025  |
+| [04 – VLAN](./vlan/)                           | Segmentar rede com VLANs e comprovar isolamento entre sub-redes.        | 05/09/2025  |
+| [06 – DNS](./dns/)                             | Implementar servidor DNS e testar resolução com `dig` e `nslookup`.     | 19/09/2025  |
+| [07 – Mail](./mail/)                           | Implantar serviço de correio (SMTP/POP3/IMAP) e testar envio/recepção.  | 26/09/2025  |
+| [08 – WWW](./www/)                             | Publicar servidor web Apache/Nginx e validar acesso via navegador.      | 03/10/2025  |
+| [10 – IMG](./img/)                             | Consolidar evidências gráficas, diagramas e registros de rede.          | 17/10/2025  |
+| [11 – CA](./ca/)                               | Criar autoridade certificadora e aplicar certificados SSL/TLS.          | 24/10/2025  |
+| [12 – Entrega Final](./)                       | Revisão e entrega consolidada de todos os laboratórios.                 | 31/10/2025  |
+
+
+-->
+
+### Orientações Gerais
+
+- Cada pasta contém **1 laboratório prático** com instruções no `README.md`.
+- As entregas devem incluir **prints de tela, arquivos de configuração e breve relatório técnico**.
+- O repositório deve permanecer organizado e versionado com commits identificáveis (`lab1_vm`, `lab2_gns3`, etc.).
+- O atraso em uma atividade não impede a continuação das próximas, mas afeta a nota de regularidade.
+
+---
+
 ## 2. Preparando-se para as Práticas em Laboratório
 
 O Docker é uma plataforma de virtualização leve que permite empacotar aplicações e todas as suas dependências (bibliotecas, configurações e código) em ambientes isolados, chamados containers. Esses containers são altamente portáveis e podem ser executados em qualquer sistema operacional compatível. Essa solução é amplamente adotada no mercado para criar ambientes replicáveis e consistentes, eliminando a necessidade de configurar e instalar manualmente cada aplicação em diferentes máquinas.
