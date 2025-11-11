@@ -16,13 +16,14 @@ Para realizar a preparação do ambiente para prática **em casa**, prossiga ape
 Este cronograma define as entregas práticas correspondentes às pastas do repositório, com uma atividade por laboratório.  
 A sequência foi organizada para evoluir de fundamentos de infraestrutura até serviços de aplicação.
 
----
 
-|  #               | Desafio                                                                  | Prazo       |
-| [01](./)         | Preparar ambiente virtual, importar OVA, configurar NAT e acesso SSH.    | 11/11/2025  |
-| [02](./sniffing/)| Capturar e analisar tráfego com Wireshark/tcpdump.                       | 11/11/2025  |
-| [03](./gns3/)    | Construir topologia e validar conectividade entre nós.                   | 11/11/2025  |
-| [04](./dhcp/)    | Configurar servidor DHCP e validar concessão de IP automática.           | 11/11/2025  |
+| # | Desafio | Prazo |
+|:--|:--|:--:|
+| [01](./) | Preparar ambiente virtual, importar OVA, configurar NAT e acesso SSH. | 11/11/2025 |
+| [02](./sniffing/) | Capturar e analisar tráfego com Wireshark/tcpdump. | 11/11/2025 |
+| [03](./gns3/) | Construir topologia e validar conectividade entre nós. | 11/11/2025 |
+| [04](./dhcp/) | Configurar servidor DHCP e validar concessão de IP automática. | 11/11/2025 |
+
 
 <!--
 
