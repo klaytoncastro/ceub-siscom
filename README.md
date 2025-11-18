@@ -192,6 +192,15 @@ Volte ao terminal Windows e teste a conexão:
 ssh -i .\.ssh\id_rsa -p 2222 labihc@localhost
 ```
 
+Agora no VS Code, abra o SSH Remote conforme instruções do Professor, clone o repositório da disciplina no diretório `/opt/` e dê permissão de `owner` ao usuário `labihc`:
+
+```bash
+sudo su
+cd /opt
+git clone https://github.com/klaytoncastro/ceub-siscom
+chown -R labihc.labihc ./ceub-siscom
+```
+
 ### 3.2. Compreendendo o modo NAT
 
 NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo endereço IP (_Internet Protocol_) do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
