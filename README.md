@@ -153,6 +153,39 @@ A imagem OVA fornecida já vem equipada com ferramentas como `docker`, `docker-c
 - **Usuário:** labihc
 - **Senha:** L@b1hc
 
+### Acesso Seguro via Troca de Chaves (SSH) 
+
+No seu VS Code configure assim o SSH Remote: 
+
+```bash
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host labihc
+    HostName localhost
+    Port 2222
+    User labihc
+    IdentityFile C:/Users/<seu_usuario>/.ssh/id_rsa
+    IdentitiesOnly yes
+```
+
+No terminal do Windows, realize os seguintes passos: 
+
+```powershell
+# Windows
+# ssh-keygen -t rsa
+# scp -P 2222 .\id_rsa.pub labihc@localhost:/tmp
+# ssh -i C:\Users\<seu_usuario>\.ssh\id_rsa -p 2222 labihc@localhost
+```
+
+No terminal do Linux, realize os seguintes passos: 
+
+```bash
+# Linux
+#mkdir -p ~/.ssh
+#cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
+#chmod 600 ~/.ssh/authorized_keys
+#chmod 700 ~/.ssh
+```
+
 ### 3.2. Compreendendo o modo NAT
 
 NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo endereço IP (_Internet Protocol_) do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
