@@ -173,6 +173,7 @@ No terminal do Windows, realize os seguintes passos:
 # Windows
 # ssh-keygen -t rsa
 # scp -P 2222 .\.ssh\id_rsa.pub labihc@localhost:/tmp
+# ssh -p 2222 labihc@localhost
 # ssh -i C:\Users\<seu_usuario>\.ssh\id_rsa -p 2222 labihc@localhost
 ```
 
