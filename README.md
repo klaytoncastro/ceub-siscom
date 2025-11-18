@@ -171,22 +171,22 @@ No terminal do Windows, realize os seguintes passos:
 
 ```powershell
 # Windows
-# ssh-keygen -t rsa
-# scp -P 2222 .\.ssh\id_rsa.pub labihc@localhost:/tmp
-# ssh -p 2222 labihc@localhost
+ssh-keygen -t rsa
+scp -P 2222 .\.ssh\id_rsa.pub labihc@localhost:/tmp
+ssh -p 2222 labihc@localhost
 ```
 
 No terminal do Linux, realize os seguintes passos: 
 
 ```bash
 # Linux
-#mkdir -p ~/.ssh
-#cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
-#chmod 600 ~/.ssh/authorized_keys
-#chmod 700 ~/.ssh
+mkdir -p ~/.ssh
+cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
 ```
 
-Volte ap terminal Windows e teste a conexão: 
+Volte ao terminal Windows e teste a conexão: 
 
 ```powershell
 ssh -i C:\Users\<seu_usuario>\.ssh\id_rsa -p 2222 labihc@localhost
