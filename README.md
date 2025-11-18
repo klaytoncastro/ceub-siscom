@@ -189,7 +189,7 @@ chmod 700 ~/.ssh
 Volte ao terminal Windows e teste a conexão: 
 
 ```powershell
-ssh -i C:\Users\<seu_usuario>\.ssh\id_rsa -p 2222 labihc@localhost
+ssh -i .\.ssh\id_rsa -p 2222 labihc@localhost
 ```
 
 ### 3.2. Compreendendo o modo NAT
