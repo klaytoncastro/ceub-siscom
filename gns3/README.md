@@ -52,7 +52,7 @@ Senha: admin
 
 **Obs**: Se estiver usando a VM, certifique-se de liberar o NAT para a porta `3080`.
 
-Configure uma topologia básica para testar os VPCs, atribuindo IPs estáticos e um Switch Ethernet para conectividade. 
+Crie um projeto e configure uma topologia básica para testar os VPCs, atribuindo IPs estáticos e um Switch Ethernet para conectividade entre eles. 
 
 ```bash
 #Configuração do PC1: 
