@@ -132,7 +132,7 @@ O objetivo é gerar tráfego real entre dois hosts, capturar o fluxo e analisá-
 ```bash
 # Passo 1 — Subir o ambiente com os contêineres: 
 cd /opt/ceub-siscom/sniffing
-docker compose up -d
+docker-compose up -d
 ```
 
 Com isso, o ambiente em contêiner cria:
@@ -162,6 +162,22 @@ Agora gere tráfego de erro, apontando para uma URL não existente:
 docker exec -it client curl http://web/users
 ```
 
+Você também pode utilizar uma instrução `for` para repetir os comandos e gerar tráfego. Por exemplo: 
+
+```bash
+# Para tráfego de sucesso - Código HTTP 200 OK
+for ((i=1; i<=20; i++)); do
+  docker exec -it client curl http://web
+done
+```
+
+```bash
+# Para tráfego de erro - Código HTTP 404 Not Found
+for ((i=1; i<=20; i++)); do
+  docker exec -it client curl http://web/users
+done
+```
+
 Ao fim do processo você observará:
 
 - ICMP Echo Request
@@ -185,7 +201,7 @@ No Sala On Line (moodle), envie o arquivo .pcap da sua captura e quatro prints:
 4. **GET / 404 Not Found** – requisição a um recurso inexistente.
 
 <!--wireshark ./pcaps/http_client_web.pcap
-docker network inspect $(docker compose ps -q web | xargs docker inspect --format '{{range .NetworkSettings.Networks}}{{.NetworkID}}{{end}}') \
+docker network inspect $(docker-compose ps -q web | xargs docker inspect --format '{{range .NetworkSettings.Networks}}{{.NetworkID}}{{end}}') \
   | grep -o '"Name": "br-[^"]*' | head -1
 # pegue o nome br-XXXX
 
