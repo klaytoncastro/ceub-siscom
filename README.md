@@ -201,6 +201,24 @@ git clone https://github.com/klaytoncastro/ceub-siscom
 chown -R labihc.labihc ./ceub-siscom
 ```
 
+Para que o usuário `labihc` possa executar o comando `sudo su` e se tornar `root`, ou para executar qualquer comando elevado no terminal, sem inserir senha, edite o arquivo `/etc/sudoers` com o `vim`, conforme abaixo: 
+
+```bash
+#Eleve seu usuário a root e insira a senha
+sudo su
+
+#Edite o arquivo 
+vim /etc/sudoers
+```
+
+Pressione `INSERT` e vá para a última linha do arquivo. Insira a seguinte configuração: 
+
+```bash
+labihc ALL=(ALL) NOPASSWD: ALL
+```
+
+Agora salve, pressionando `ESC` e digitando `:x` ou `:wq!`
+
 ### 3.2. Compreendendo o modo NAT
 
 NAT (_Network Address Translation_) é a implementação de um recurso para tradução de endereços de rede. No contexto do VirtualBox, ao configurar uma VM para usar NAT, você está permitindo que essa VM se comunique com redes externas, incluindo a Internet, usando o mesmo endereço IP (_Internet Protocol_) do host. Assim, a máquina _host_ (seu _desktop_ de laboratório ou _notebook_ pessoal) age como um _gateway_ e a VM parece estar atrás de uma rede privada.
