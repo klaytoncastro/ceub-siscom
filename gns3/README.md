@@ -55,11 +55,11 @@ Senha: admin
 Crie um projeto e configure uma topologia básica para testar os VPCs, atribuindo IPs estáticos e um Switch Ethernet para conectividade entre eles. 
 
 ```bash
-#Configuração do PC1: 
-ip 192.168.1.2 mask 255.255.255.0
+#Configuração de IP e Máscara do PC1: 
+ip 192.168.1.2 255.255.255.0
 
-#Configuração do PC2:
-ip 192.168.1.3 mask 255.255.255.0
+#Configuração de IP e Máscara do PC2:
+ip 192.168.1.3 255.255.255.0
 ```
 
 A partir do PC1, pingue o PC2 e vice-versa: 
