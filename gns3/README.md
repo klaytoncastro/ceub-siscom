@@ -33,3 +33,43 @@ O GNS3 pode ser utilizado para uma ampla gama de simulações e experimentos de 
 
 - Docker instalado (para rodar o servidor GNS3 e outras aplicações, como SMTP, IMAP, DNS, DHCP, Web Server, DBMS, etc).
 - Familiaridade com **conceitos de redes de computadores**, como **roteamento**, **switching**, **serviços de rede** e **protocolos de rede**.
+
+## Laboratório
+
+Suba o simulador GNS3: 
+
+```bash
+cd /opt/ceub-siscom/gns3
+docker-compose up -d
+```
+
+Acesse a aplicação no seu navegador em: `http:\\localhost:3080` e logue com: 
+
+```bash
+Usuário: admin
+Senha: admin
+```
+
+**Obs**: Se estiver usando a VM, certifique-se de liberar o NAT para a porta `3080`.
+
+Configure uma topologia básica para testar os VPCs, atribuindo IPs estáticos e um Switch Ethernet para conectividade. 
+
+```bash
+#Configuração do PC1: 
+ip 192.168.1.2 mask 255.255.255.0
+
+#Configuração do PC2:
+ip 192.168.1.3 mask 255.255.255.0
+```
+
+A partir do PC1, pingue o PC2 e vice-versa: 
+
+```bash
+#A partir do PC1
+ping 192.168.1.3
+
+#A partir do PC2
+ping 192.168.1.2
+```
+
+Tire print da topologia e dos pings realizados e envie no Sala On Line. 
