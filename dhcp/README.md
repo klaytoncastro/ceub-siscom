@@ -146,6 +146,10 @@ Defina as configurações de rede para cada servidor DHCP, especificando o gatew
 /ip dhcp-server network add address=192.168.30.0/24 gateway=192.168.30.1
 ```
 
+### Topologia
+
+<img src="/dhcp/dhcptopology.png" alt="Topologia DHCP">
+
 ### Testes com os VPCS
 Agora que o roteador está configurado como servidor DHCP para cada sub-rede, os VPCS devem solicitar e receber automaticamente um endereço IP ao se conectarem aos switches. Execute o comando dhcp em cada VPCS para obter um IP do servidor DHCP:
 
