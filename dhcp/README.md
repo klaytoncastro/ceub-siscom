@@ -218,6 +218,67 @@ DHCP Acknowledge: Servidor confirma a atribuição do IP.
 
 Isso deve lhe permitir acompanhar o processo DHCP no GNS3 usando o MikroTik CHR.
 -->
+
+## Checklist de Evidências
+
+Para enviar no **Sala On-Line**, providencie um arquivo PDF contendo, no mínimo: 
+
+| Evidência            | O que deve mostrar                                  |
+|----------------------|------------------------------------------------------|
+| Print 1 – Topologia  | Router + 3 switches + 3 VPCS + links                 |
+| Print 2 – Pings      | PC da Asa Norte alcançando Taguatinga, Asa Sul e gateway |
+| Print 3 – Leases     | 6 clientes DHCP registrados no MikroTik             |
+
+## 1. Topologia no GNS3
+Print obrigatório:
+- Mostrar a topologia lógica.
+- Elementos visíveis:
+  - Router MikrotikCHR
+  - SwitchTaguatinga
+  - SwitchAsaNorte
+  - SwitchAsaSul
+  - 2 VPCs em Taguatinga
+  - 2 VPCs na Asa Norte
+  - 2 VPCs na Asa Sul
+- Todos os dispositivos, links e interfaces `eth` devem aparecer claramente.
+
+## 2. Testes de Conectividade
+Pela topologia, use o telnet no terminal para se conectar ao dispositivo correspondente:
+
+`telnet localhost 2001`
+
+Comandos a executar a partir de um VPC da Asa Norte:
+
+```bash
+ip dhcp
+show ip
+ping 192.168.10.X
+ping 192.168.30.101
+ping 192.168.20.1
+```
+
+Print obrigatório:
+- Um único print contendo os 3 pings executados em sequência.
+- O print deve mostrar claramente que o VPCS da Asa Norte alcança:
+  - Um host da rede 192.168.10.0/24 Taguatinga
+  - Um host da rede 192.168.30.0/24 Asa Sul
+
+## 3. Leases DHCP no MikroTik
+Comando obrigatório:
+
+```bash
+/ip dhcp-server lease print
+```
+
+Print obrigatório:
+- Devem aparecer 6 leases (6 VPCs ligados).
+- O print precisa mostrar:
+  - IP
+  - MAC
+  - Status (bound)
+  - Interface de origem
+
+
 ## Conclusão
 
 O DHCP é um componente essencial em redes modernas, automatizando a configuração de dispositivos e garantindo uma conexão de rede consistente e eficiente. Sua implementação melhora a gestão de redes, reduz problemas operacionais e é fundamental em ambientes com alta rotatividade de dispositivos conectados.
