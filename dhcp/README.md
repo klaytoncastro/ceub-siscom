@@ -20,7 +20,26 @@ O **DHCP** (Dynamic Host Configuration Protocol) é um protocolo que permite a c
 
 ## Atividade Prática: Configuração de DHCP para Rede Governamental
 
-Imagine um cenário que envolve a conexão de três unidades regionais hipotéticas do **Governo do Distrito Federal (GDF)** espalhadas em diferentes regiões. O objetivo é garantir a configuração dinâmica de endereçamento das estações de trabalho de cada unidade: **Taguatinga**, **Asa Norte**, e **Asa Sul**, usando o DHCP.
+Imagine um cenário que envolve a conexão de três unidades regionais hipotéticas do **Governo do Distrito Federal (GDF)** espalhadas em diferentes regiões. O objetivo é garantir a configuração dinâmica de endereçamento das estações de trabalho de cada unidade: **Taguatinga**, **Asa Norte**, e **Asa Sul**, usando o DHCP:
+
+```mermaid
+graph TD
+R1(MikrotikCHR)
+SW1(SwitchTaguatinga)
+SW2(SwitchAsaNorte)
+SW3(SwitchAsaSul)
+PC1(VPCS-TAG)
+PC2(VPCS-NORTE)
+PC3(VPCS-SUL)
+
+R1--ether1-192.168.10.1/24-->SW1
+R1--ether2-192.168.20.1/24-->SW2
+R1--ether3-192.168.30.1/24-->SW3
+
+SW1---PC1
+SW2---PC2
+SW3---PC3
+```
 
 ### Unidades e Sub-redes Simuladas
 
